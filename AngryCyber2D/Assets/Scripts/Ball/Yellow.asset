@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Yellow
+  m_EditorClassIdentifier: Assembly-CSharp::Yellow
+  _name: Yellow
+  maxcount: 1
+  itemTipe: 1
+  _itemPrefab: {fileID: 3707870949219104353, guid: a2159b831feaa644897c07d6d3be0205, type: 3}
+  icon: {fileID: 21300000, guid: f24a2bc9b8c95764b9297aab26f1d439, type: 3}
+  _countAmmo: 0
