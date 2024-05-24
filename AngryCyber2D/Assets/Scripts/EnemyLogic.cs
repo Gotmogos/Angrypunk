@@ -23,7 +23,7 @@ public class EnemyLogic : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             Rigidbody2D _rbwall = collision.gameObject.GetComponent<Rigidbody2D>();
-            if (_rbwall.mass >= 21000)
+            if (_rbwall.mass >= 21000 && _rbwall.velocity.x != 0)
             {
                 Destroy(gameObject) ;
             }

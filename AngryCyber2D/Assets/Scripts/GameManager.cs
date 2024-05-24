@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour
     private bool _enemy;
     [SerializeField] private GameObject _pauseMenu;
     private bool _enable;
+    private int _level;
 
     private void Awake()
     {
+        _level = 1;
         _pauseMenu.SetActive(false);
         _enable = false;
-        Debug.Log(STaticInventory.slots);
+        
         if (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
         {
             _enemy = true;
@@ -24,14 +26,15 @@ public class GameManager : MonoBehaviour
         {
             _enemy = false;
         }
+       
     }
     void Update()
     {        
         if (STaticInventory.slots == 0 && _enemy == true)
         {
-            SceneManager.LoadScene(0);
+           Invoke( "OnLose", 0.5f);
         }
-        if (STaticInventory.slots >= 1 && _enemy == false)
+        if (STaticInventory.slots > 0 && _enemy == false)
         {
             SceneManager.LoadScene(2);
         }
@@ -47,9 +50,15 @@ public class GameManager : MonoBehaviour
         {
             _pauseMenu.SetActive(!_enable);
             _enable = !_enable;
-        }       
+        }
+        Debug.Log(STaticInventory.slots);
     }
-    public void OnMainMenu()
+
+    public void OnLose()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void OnmainMenuFromLevel()
     {
         SceneManager.LoadScene(0);
     }
@@ -61,5 +70,11 @@ public class GameManager : MonoBehaviour
     {
         _pauseMenu.SetActive(!_enable);
         _enable = !_enable;
+    }
+    public void OnDisable()
+    {          
+            STaticInventory.slots = 0;
+            Debug.Log(STaticInventory.slots);
+            Debug.Log("Yes, I am alive");                          
     }
 }

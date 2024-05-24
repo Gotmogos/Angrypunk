@@ -17,7 +17,7 @@ public class InventroyManager : MonoBehaviour
             if(InventoryPanel.GetChild(i).GetComponent<InventorySlot>() != null)
             {
                 Slots.Add(InventoryPanel.GetChild(i).GetComponent<InventorySlot>());
-                Debug.Log("Yes");
+                
             }
         }
     }

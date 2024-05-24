@@ -352,7 +352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.085022, y: -9.0000305}
+  m_AnchoredPosition: {x: 12.085083, y: -9.0000305}
   m_SizeDelta: {x: 143.2, y: 118}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &111805200
@@ -438,7 +438,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 111805203}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1299112360}
+        m_TargetAssemblyTypeName: GameManagerMenu, Assembly-CSharp
+        m_MethodName: OnMenuSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &111805203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,7 +654,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u0420\u041E\u0414\u041E\u041B\u0416\u0418\u0422\u042C"
+  m_text: "\u041D\u0410\u0421\u0422\u0420\u041E\u0419\u041A\u0418"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: d75b8f41e959450c84ac6e967084d3e1, type: 2}
@@ -745,12 +757,12 @@ AudioSource:
   m_GameObject: {fileID: 1132911896}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 1dfeb2238bb2aed469a81c58c868d28b, type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 09ee41946a6cc0e4398edfb74aa8d843, type: 2}
   m_audioClip: {fileID: 8300000, guid: 7c5951eb2a9107942b4422d4ac7ec802, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.03
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1254,6 +1266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panel: {fileID: 40254902}
+  _audio: {fileID: 1132911897}
 --- !u!1 &1300704551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panel: {fileID: 40254902}
+  _audio: {fileID: 1132911897}
 --- !u!95 &1300704554
 Animator:
   serializedVersion: 5
@@ -1558,7 +1572,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ANGRYPUNK
+  m_text: ANGRYPUNKS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: d75b8f41e959450c84ac6e967084d3e1, type: 2}

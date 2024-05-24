@@ -13,8 +13,6 @@ public class Direction : MonoBehaviour
     [SerializeField]private float maxDistance;
     public Rigidbody2D slingrb;
     private LineRenderer line;
-    GradientColorKey[] colorKey;
-    GradientAlphaKey[] alphaKey;
 
     private void Awake()
     {
@@ -22,7 +20,8 @@ public class Direction : MonoBehaviour
         SpringJoint = GetComponent<SpringJoint2D>();      
         releaseDecay = 1 / (SpringJoint.frequency * 4);
         ballS = GetComponent<SpriteRenderer>();  
-        line = GetComponent<LineRenderer>();
+        line = gameObject.GetComponent<LineRenderer>();
+        line.enabled = false;
     }
     private void Update()
     {
@@ -57,9 +56,7 @@ public class Direction : MonoBehaviour
     {
         Pressed = true;
         rb.isKinematic = true;
-        line.enabled = true;
-        line.colorGradient = new Gradient();
-        
+        line.enabled = true;       
     }
     private void OnMouseUp()
     {
@@ -67,7 +64,6 @@ public class Direction : MonoBehaviour
         rb.isKinematic = false;
         StartCoroutine(Release());
         line.enabled = false;
-
     }
     private IEnumerator Release()
     {
@@ -82,10 +78,11 @@ public class Direction : MonoBehaviour
             Invoke("DestroyBa", 2f);
         }
     }
+
     private void DestroyBa()
     {
         Destroy(gameObject);
-        STaticInventory.slots--;
+        
     }
     private void OnEnable()
     {
@@ -94,6 +91,8 @@ public class Direction : MonoBehaviour
         SpringJoint.enabled = true;
         SpringJoint.distance = 0.005f;
     }
-
-
+    private void OnDestroy()
+    {
+        STaticInventory.slots--;
+    }
 }

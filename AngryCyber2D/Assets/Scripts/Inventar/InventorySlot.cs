@@ -37,7 +37,8 @@ public class InventorySlot : MonoBehaviour
         if (_itemTipe == ItemTipe.Yellow || _itemTipe == ItemTipe.Red || _itemTipe == ItemTipe.Blue)
         {
             STaticInventory.slots++;           
-        }       
+        }
+
     }
     private void OnMouseOver()
     {       
@@ -65,14 +66,14 @@ public class InventorySlot : MonoBehaviour
                 Instantiate(Red, origin.position, Quaternion.identity);
                 isEmprty = false;
                 _itemTipe = ItemTipe.black;
-               
+                
             }
             if (_itemTipe == ItemTipe.Blue)
             {
                 _image.color = new Color(1, 1, 1, 0);
                 Instantiate(Blue, origin.position, Quaternion.identity);
                 isEmprty = false;
-                _itemTipe = ItemTipe.black;               
+                _itemTipe = ItemTipe.black;                
             }
         }
     }

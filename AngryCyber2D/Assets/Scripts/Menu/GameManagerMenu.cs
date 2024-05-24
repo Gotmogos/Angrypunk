@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerMenu : MonoBehaviour
 {
-     public GameObject _panel;
+    public GameObject _panel;
+    public AudioSource _audio;
     
     private void OnDeload()
     {
@@ -23,5 +24,11 @@ public class GameManagerMenu : MonoBehaviour
     private void Update()
     {
         Invoke("OnDeload", 1f);
+        _audio.volume = PlayerPrefs.GetFloat("MusicVolume");
     }
+    public void OnMenuSettings()
+    {
+        SceneManager.LoadScene("Settings");
+    }
+
 }
